@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="reveal">
+
+<h2>Student Event Registration</h2>
+  
+</div>
+
+
+<input type="text" id="name" placeholder="Enter Name"><br><br>
+<input type="text" id="roll" placeholder="Enter Roll No"><br><br>
+<input type="email" id="email" placeholder="Enter Email"><br><br>
+
+<select id="event">
+  <option>Hackathon</option>
+  <option>Workshop</option>
+  <option>Seminar</option>
+</select>
+
+
+<button onclick="register()">Register</button>
+
+<hr>
+
+<h3>Latest Announcement</h3>
+<p id="announcementBox">No announcements yet</p>
+
+
+<h3 id="msg"></h3>
+
+<h3>Your Registration Status:</h3>
+<p id="statusBox">Not Registered</p>
+
+
+<script src="script.js"></script>
+
+<script>
+  checkStatus();
+</script>
+
+<script>
+
+let data = JSON.parse(localStorage.getItem("searchData"));
+
+if(data){
+  document.getElementById("event").value = data.event;
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Campus Event System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2 class="logo" onclick="toggleSidebar()">UniEvents ☰</h2>
+
+
+    <a href="#">Events</a>
+    <a href="#">About</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+
+    <button class="login-btn">Login</button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+
+
+<!-- HERO SECTION -->
+
+<div class="hero-content">
+
+  <h1>Campus Event Management Platform</h1>
+
+  <p>Discover, register and manage university events with ease.</p>
+
+  <button class="primary-btn">Explore Events</button>
+
+
+
+
+  <!-- PANEL BUTTONS -->
+  <div class="panel-buttons">
+    <a href="student.html">
+      <button class="panel-btn">Student Panel</button>
+    </a>
+
+    <a href="admin.html">
+      <button class="panel-btn">Admin Panel</button>
+    </a>
+  </div>
+
+</div>
+
+<script>
+function toggleSidebar() {
+  document.querySelector(".sidebar").classList.toggle("hide");
+}
+</script>
+
+<script>
+function searchEvent() {
+
+  let event = document.getElementById("searchEvent").value;
+  let uni = document.getElementById("searchUniversity").value;
+  let date = document.getElementById("searchDate").value;
+
+  let searchData = {
+    event,
+    uni,
+    date
+  };
+
+  localStorage.setItem("searchData", JSON.stringify(searchData));
+
+  window.location.href = "student.html";
+}
+</script>
+
+
+
+</body>
+</html>
